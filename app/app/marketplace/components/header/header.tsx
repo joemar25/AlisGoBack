@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import Image from "next/image";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import '@solana/wallet-adapter-react-ui/styles.css';
 
 import Notifications from "./images/Notifications.svg";
 import Avatar from "./images/Avatar.svg";
@@ -27,10 +28,14 @@ const Header = () => {
 
   if (!mounted) {
     return (
-      <header className="sticky top-0 z-50 flex items-center justify-between w-full px-4 py-3 bg-white shadow-md dark:bg-gray-900">
-        <div className="flex items-center space-x-4">
-          <div className="w-6 h-6 bg-gray-400 rounded-full" />
-        </div>
+      <header className="sticky top-0 z-50 flex items-center justify-between py-3 px-4 bg-white dark:bg-gray-900 shadow-md w-full">
+        <input
+          type="search"
+          placeholder="Search..."
+          aria-label="Search"
+          className="h-10 w-1/3 rounded p-2 text-gray-900 dark:text-gray-100 border-none"
+        />
+        <div className="w-6 h-6 bg-gray-400 rounded-full" />
       </header>
     );
   }
@@ -41,46 +46,42 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 flex items-center justify-between py-3 px-6 transition-colors ${scrolled ? "bg-white dark:bg-gray-900 shadow-md" : "bg-transparent"
+      className={`sticky top-0 z-50 flex items-center justify-between py-3 px-4 transition-colors ${scrolled ? "bg-white dark:bg-gray-900 shadow-md" : "bg-transparent"
         }`}
     >
-      <div className="flex items-center">
-        <p className="relative top-1 left-0 font-heading-4 font-[number:var(--heading-4-font-weight)] text-transparent text-[length:var(--heading-4-font-size)] tracking-[var(--heading-4-letter-spacing)] leading-[var(--heading-4-line-height)] [font-style:var(--heading-4-font-style)]">
-          <span className="text-[#a70bce] font-heading-4 [font-style:var(--heading-4-font-style)] font-[number:var(--heading-4-font-weight)] tracking-[var(--heading-4-letter-spacing)] leading-[var(--heading-4-line-height)] text-[length:var(--heading-4-font-size)]">
-            Alis.
-          </span>
-          <span className="text-[#24282b] font-heading-4 [font-style:var(--heading-4-font-style)] font-[number:var(--heading-4-font-weight)] tracking-[var(--heading-4-letter-spacing)] leading-[var(--heading-4-line-height)] text-[length:var(--heading-4-font-size)]">
-            Go
-          </span>
-        </p>
-      </div>
-      <div className="flex items-center space-x-6">
-        {/* <button
+      <input
+        type="search"
+        placeholder="Search..."
+        aria-label="Search"
+        className="h-10 w-full max-w-xs rounded p-2 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <div className="flex items-center space-x-4">
+        <button
           onClick={toggleTheme}
           aria-label="Toggle theme"
-          className="flex items-center justify-center w-10 h-10 transition-colors bg-gray-100 rounded-full hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+          className="w-10 h-10 flex items-center justify-center rounded transition-colors hover:bg-gray-200 dark:hover:bg-gray-700"
         >
           {theme === "light" ? (
             <Sun size={24} className="text-yellow-500" />
           ) : (
             <Moon size={24} className="text-gray-400" />
           )}
-        </button> */}
+        </button>
         <Image
           src={Notifications}
           alt="Notifications"
           aria-label="View Notifications"
           unoptimized
-          className="w-6 h-6 cursor-pointer hover:opacity-80"
+          className="w-6 h-6 cursor-pointer"
         />
         <Image
           src={Avatar}
           alt="User Avatar"
           aria-label="User Profile"
           unoptimized
-          className="w-8 h-8 rounded-full cursor-pointer hover:opacity-80"
+          className="w-8 h-8 rounded-full cursor-pointer"
         />
-        <WalletMultiButton className="flex items-center justify-center h-10 px-4 py-2 text-sm text-white transition-colors bg-blue-600 rounded-md hover:bg-blue-700" aria-label="Connect Wallet" />
+        <WalletMultiButton className="text-sm h-10 flex items-center justify-center px-3 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-colors" aria-label="Connect Wallet" />
       </div>
     </header>
   );

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@project-serum/anchor": "^0.26.0",
     "@react-native-async-storage/async-storage": "^1.24.0",
     "@solana/wallet-adapter-base": "^0.9.23",
     "@solana/wallet-adapter-react": "^0.15.35",
@@ -27,14 +28,17 @@
     "next-themes": "^0.3.0",
     "pino-pretty": "^11.2.2",
     "postcss": "8.4.27",
+    "prop-types": "^15.8.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-hot-toast": "^2.4.1",
     "sharp": "^0.32.6",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.11",
+    "@types/prop-types": "^15.7.13",
     "eslint": "9.12.0"
   }
 }

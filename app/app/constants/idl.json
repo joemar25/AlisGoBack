@@ -1,0 +1,150 @@
+{
+  "version": "0.1.0",
+  "name": "alisgo_dao",
+  "instructions": [
+    {
+      "name": "initializeUser",
+      "accounts": [
+        { "name": "authority", "isMut": true, "isSigner": true },
+        { "name": "userProfile", "isMut": true, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": []
+    },
+    {
+      "name": "createTouristSpot",
+      "accounts": [
+        { "name": "touristSpotAccount", "isMut": true, "isSigner": true },
+        { "name": "signer", "isMut": true, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "name", "type": "string" },
+        { "name": "description", "type": "string" },
+        { "name": "imageUrl", "type": "string" },
+        { "name": "location", "type": "string" },
+        { "name": "latitude", "type": "f64" },
+        { "name": "longitude", "type": "f64" },
+        { "name": "mintAddress", "type": "string" },
+        { "name": "creatorAddress", "type": "string" },
+        { "name": "collectionName", "type": "string" },
+        {
+          "name": "attributes",
+          "type": { "vec": { "defined": "structs::Attribute" } }
+        }
+      ]
+    },
+    {
+      "name": "createProposal",
+      "accounts": [
+        { "name": "proposalAccount", "isMut": true, "isSigner": true },
+        { "name": "userProfile", "isMut": true, "isSigner": false },
+        { "name": "signer", "isMut": true, "isSigner": true },
+        { "name": "authority", "isMut": false, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [{ "name": "description", "type": "string" }]
+    },
+    {
+      "name": "voteOnProposal",
+      "accounts": [
+        { "name": "userProfile", "isMut": true, "isSigner": false },
+        { "name": "proposalAccount", "isMut": true, "isSigner": false },
+        { "name": "signer", "isMut": true, "isSigner": true },
+        { "name": "authority", "isMut": false, "isSigner": false }
+      ],
+      "args": [{ "name": "vote", "type": "bool" }]
+    },
+    {
+      "name": "closeProposal",
+      "accounts": [
+        { "name": "userProfile", "isMut": true, "isSigner": false },
+        { "name": "proposalAccount", "isMut": true, "isSigner": false },
+        { "name": "signer", "isMut": true, "isSigner": true },
+        { "name": "authority", "isMut": false, "isSigner": false }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "NewAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [{ "name": "data", "type": "u64" }]
+      }
+    },
+    {
+      "name": "TouristSpot",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "name", "type": "string" },
+          { "name": "description", "type": "string" },
+          { "name": "imageUrl", "type": "string" },
+          { "name": "location", "type": "string" },
+          { "name": "latitude", "type": "f64" },
+          { "name": "longitude", "type": "f64" },
+          { "name": "mintAddress", "type": "string" },
+          { "name": "creatorAddress", "type": "string" },
+          { "name": "collectionName", "type": "string" },
+          {
+            "name": "attributes",
+            "type": { "vec": { "defined": "Attribute" } }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Proposal",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "description", "type": "string" },
+          { "name": "proposer", "type": "publicKey" },
+          { "name": "votes", "type": { "defined": "BTreeMap<Pubkey,bool>" } },
+          { "name": "status", "type": { "defined": "ProposalStatus" } }
+        ]
+      }
+    },
+    {
+      "name": "UserProfile",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "authority", "type": "publicKey" },
+          { "name": "lastProposal", "type": "u64" },
+          { "name": "proposalCount", "type": "u64" }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "Attribute",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "traitType", "type": "string" },
+          { "name": "value", "type": "string" }
+        ]
+      }
+    },
+    {
+      "name": "ProposalStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [{ "name": "Open" }, { "name": "Closed" }]
+      }
+    }
+  ],
+  "errors": [
+    { "code": 6000, "name": "ProposalClosed", "msg": "The proposal is closed" },
+    {
+      "code": 6001,
+      "name": "AlreadyVoted",
+      "msg": "You have already voted on this proposal"
+    },
+    { "code": 6002, "name": "UnauthorizedAccess", "msg": "Unauthorized access" }
+  ]
+}

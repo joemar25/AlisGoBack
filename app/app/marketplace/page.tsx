@@ -66,9 +66,9 @@ const Marketplace: NextPage = () => {
   return (
     <div className="flex h-screen overflow-hidden">
       <Sidebar selectedComponent={selectedComponent} changeComponent={setSelectedComponent} />
-      <div className="flex flex-col flex-1 ml-20 overflow-hidden">
+      <div className="flex-1 ml-20 flex flex-col overflow-hidden">
         <Header />
-        <main className="flex-1 p-6 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto p-6">
           {renderComponent()}
         </main>
       </div>
