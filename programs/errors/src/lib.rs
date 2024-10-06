@@ -10,7 +10,7 @@ use proposals::*;
 use tourist_spots::*;
 use user_profile::*;
 
-declare_id!("");
+declare_id!("45q7hmQ8xiLTjzU8wToPYtd3nX3DcQTvvCGstqRtgVm3");
 
 #[program]
 mod alisgo_dao {
