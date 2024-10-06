@@ -1,0 +1,213 @@
+button {
+  cursor: pointer;
+}
+
+.cont--container {
+  display: flex;
+  flex-direction: column;
+  height: 78rem;
+  width: 76.25rem;
+  color: #ffffff;
+}
+
+.cont--container-lm {
+  display: flex;
+  flex-direction: column;
+  height: 78rem;
+  width: 76.25rem;
+  color: #000;
+}
+
+.discover--container,
+.trending,
+.label {
+  width: 76.25rem;
+}
+
+.discover--container {
+  display: flex;
+  height: 14.25rem;
+  gap: 1.875rem;
+  margin-bottom: 4.313rem;
+}
+
+#explore {
+  border-radius: 18px;
+}
+
+.discover {
+  padding: 1.875rem 1.875rem 1.375rem 1.875rem;
+  background-image: url("./images/Discover.svg");
+}
+
+.discover#explore {
+  border-radius: 21px;
+}
+
+.disc--title {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+}
+
+.disc--title-lm {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 39px;
+  color: #ffffff;
+}
+
+#desc {
+  margin-top: 0.625rem;
+  margin-bottom: 1.75rem;
+  color: rgba(212, 203, 243, 0.75);
+}
+
+.discover .disc--title,
+.discover .disc--title-lm,
+.discover .button--container {
+  width: 17.875rem;
+}
+
+#discover,
+#create {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+#create {
+  background-color: #dc3546;
+}
+
+.featured {
+  display: flex;
+  background: #1d1932;
+  padding: 1.25rem;
+  gap: 1.25rem;
+}
+
+.featured-lm {
+  display: flex;
+  background: #ffffff;
+  padding: 1.25rem;
+  gap: 1.25rem;
+  color: #000;
+}
+
+#featured {
+  height: 11.688rem;
+}
+
+.ft--container {
+  display: flex;
+  flex-direction: column;
+  width: 17.813rem;
+  height: 11.688rem;
+}
+
+.ft--user-container {
+  display: flex;
+  gap: 0.813rem;
+  align-items: center;
+  margin-bottom: 0.926rem;
+}
+
+#status {
+  height: 0.313rem;
+  width: 0.313rem;
+  background: #50ba23;
+  border-radius: 10px;
+}
+
+.ft--title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 0.563rem;
+}
+
+.ft--auction {
+  display: flex;
+
+  font-size: 14px;
+  line-height: 21px;
+}
+
+#current-bid {
+  display: flex;
+  margin-left: auto;
+  gap: 0.313rem;
+}
+
+.ft--container .vals {
+  margin-bottom: 1rem;
+}
+
+.button--container {
+  display: flex;
+  gap: 1.25rem;
+  height: 2.5rem;
+}
+
+button#place-bid,
+button#details {
+  border-radius: 9px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+button#place-bid {
+  background: #6f4ff2;
+}
+
+button#details {
+  background: #dc3546;
+}
+
+.label {
+  height: 1.3rem;
+  display: flex;
+}
+
+#selector {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+  font-size: 14px;
+}
+
+#selected {
+  background: #6f4ff2;
+  color: #ffffff;
+  border-radius: 14px;
+  height: 1.313rem;
+  width: 2.813rem;
+}
+
+.selector--item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trending {
+  margin-top: 2rem;
+  height: 37.313rem;
+  display: grid;
+  gap: 1.875rem;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow-y: auto;
+}
+
+/* mar-meow */
+.discover-section {
+  background-image: url("./images/Discover.svg");
+  background-size: cover;
+  background-position: center;
+}

@@ -1,0 +1,87 @@
+.activity--panel {
+  display: grid;
+  grid-template-columns: 40px 2fr 1fr 1fr 1fr 1fr 60px;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.activity--panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.nft--container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nft-image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.nft--details {
+  display: flex;
+  flex-direction: column;
+}
+
+.nft-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.nft-author {
+  font-size: 0.875rem;
+  color: #6c7aa0;
+}
+
+.price,
+.recent-offer,
+.time-left {
+  font-size: 1rem;
+  color: #333;
+}
+
+.offer-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.remove-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #ff4c60;
+  color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.remove-item:hover {
+  background: #ff2b45;
+}

@@ -1,0 +1,125 @@
+/* General container styling */
+.collection--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode styling */
+.collection--container.dark {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+/* Header and label styling */
+.header-section {
+  width: 100%;
+}
+
+.label--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+#label {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.875rem; /* 14px */
+  color: #6c7aa0;
+}
+
+#home,
+#collections {
+  transition: color 0.3s;
+}
+
+#home:hover,
+#collections:hover {
+  color: #007acc; /* Highlight color on hover */
+}
+
+.breadcrumb-divider {
+  color: inherit;
+}
+
+/* Selector container styling */
+#selector {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  margin: 3rem 0 1.5rem;
+}
+
+.selector--item {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 1rem; /* 16px */
+  border-radius: 0.5rem;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.selector--item:hover {
+  background-color: #e5e7eb;
+}
+
+.selector--item.active {
+  background-color: #007acc;
+  color: #ffffff;
+}
+
+/* Dark mode selector styling */
+.collection--container.dark #selector .selector--item {
+  background-color: #374151;
+  color: #d1d5db;
+}
+
+.collection--container.dark #selector .selector--item:hover {
+  background-color: #475569;
+}
+
+.collection--container.dark #selector .selector--item.active {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Trending section */
+.trending {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  /* Adjust for mobile devices */
+  .label--container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #selector {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .selector--item {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .collection--container {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,61 @@
+.bids--container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  max-width: 80rem;
+  margin: auto;
+}
+
+.header--section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  color: #6c7aa0;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-item:hover {
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.activity--container {
+  width: 100%;
+}
+
+.activity--label {
+  display: grid;
+  grid-template-columns: 40px 2fr 1fr 1fr 1fr 1fr 60px;
+  align-items: center;
+  background: #e5e7eb;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.activity--div {
+  width: 100%;
+  border-bottom: 1px solid #e5e7eb;
+  margin: 1rem 0;
+}
+
+.panel--container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

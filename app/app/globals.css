@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+/* @import url("https://fonts.googleapis.com/css?family=Syne:var(--paragraph-font-weight),var(--heading-4-font-weight),var(--heading-3-font-weight),400,var(--heading-7-font-weight),600,var(--heading-1-font-weight),var(--heading-2-font-weight),var(--heading-5-font-weight),var(--heading-6-font-weight)"); */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+  font-family: "Syne";
+  src: url("~/static/font/Syne-Regular.ttf") format("truetype");
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+:root {
+  --black: rgba(36, 40, 43, 1);
+  --drop-shadow-1: 5px 10px 30px 0px rgba(0, 0, 0, 0.05);
+  --gray: rgba(112, 111, 111, 1);
+  --green: rgba(167, 11, 206, 1);
+  --heading-1-font-family: "Syne", Helvetica;
+  --heading-1-font-size: 80px;
+  --heading-1-font-style: normal;
+  --heading-1-font-weight: 600;
+  --heading-1-letter-spacing: 0px;
+  --heading-1-line-height: normal;
+  --heading-2-font-family: "Syne", Helvetica;
+  --heading-2-font-size: 64px;
+  --heading-2-font-style: normal;
+  --heading-2-font-weight: 600;
+  --heading-2-letter-spacing: 0px;
+  --heading-2-line-height: normal;
+  --heading-3-font-family: "Syne", Helvetica;
+  --heading-3-font-size: 36px;
+  --heading-3-font-style: normal;
+  --heading-3-font-weight: 600;
+  --heading-3-letter-spacing: 0px;
+  --heading-3-line-height: normal;
+  --heading-4-font-family: "Syne", Helvetica;
+  --heading-4-font-size: 24px;
+  --heading-4-font-style: normal;
+  --heading-4-font-weight: 600;
+  --heading-4-letter-spacing: 0px;
+  --heading-4-line-height: normal;
+  --heading-5-font-family: "Syne", Helvetica;
+  --heading-5-font-size: 20px;
+  --heading-5-font-style: normal;
+  --heading-5-font-weight: 600;
+  --heading-5-letter-spacing: 0px;
+  --heading-5-line-height: 30px;
+  --heading-6-font-family: "Syne", Helvetica;
+  --heading-6-font-size: 16px;
+  --heading-6-font-style: normal;
+  --heading-6-font-weight: 600;
+  --heading-6-letter-spacing: 0px;
+  --heading-6-line-height: 26px;
+  --heading-7-font-family: "Syne", Helvetica;
+  --heading-7-font-size: 16px;
+  --heading-7-font-style: normal;
+  --heading-7-font-weight: 400;
+  --heading-7-letter-spacing: 0px;
+  --heading-7-line-height: 26px;
+  --paragraph-font-family: "Syne", Helvetica;
+  --paragraph-font-size: 20px;
+  --paragraph-font-style: normal;
+  --paragraph-font-weight: 400;
+  --paragraph-letter-spacing: 0px;
+  --paragraph-line-height: 30px;
+  --white: rgba(254, 254, 254, 1);
+}
