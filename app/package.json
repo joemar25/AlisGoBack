@@ -23,6 +23,8 @@
     "bs58": "^4.0.1",
     "encoding": "^0.1.13",
     "eslint-config-next": "14.2.14",
+    "framer-motion": "^11.11.1",
+    "gsap": "^3.12.5",
     "lucide-react": "^0.447.0",
     "next": "^14.2.10",
     "next-themes": "^0.3.0",
