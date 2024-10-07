@@ -19,6 +19,11 @@
   box-sizing: border-box;
 }
 
+img {
+  /* mar-note: do not remove this */
+  pointer-events: none;
+}
+
 html,
 body {
   margin: 0px;
