@@ -41,36 +41,36 @@ const Categories: React.FC = () => {
           name="Albay"
           collections={326}
           images={[
-            "/static/img/albay-1.jpg",
-            "/static/img/albay-2.jpg",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/6d/8d/22/cagsawa-barangay-busay.jpg?w=900&h=-1&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/42/35/b5/20180610-090223-largejpg.jpg?w=900&h=500&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/09/1d/13/lignon-hill.jpg?w=900&h=500&s=1",
           ]}
         />
         <CategoryCard
           name="Naga"
           collections={187}
           images={[
-            "/static/img/naga-1.jpg",
-            "/static/img/naga-2.jpg",
-            "/static/img/naga-3.jpg",
-            "/static/img/naga-4.jpg",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/97/71/de/dsc-1475-largejpg.jpg?w=900&h=-1&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/7b/ed/d5/sonrisa-farm.jpg?w=900&h=500&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/42/35/b5/20180610-090223-largejpg.jpg?w=900&h=500&s=1",
           ]}
         />
         <CategoryCard
           name="Sorsogon"
           collections={201}
           images={[
-            "/static/img/sorsogon-1.jpg",
-            "/static/img/sorsogon-2.jpg",
-            "/static/img/sorsogon-3.jpg",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/be/b9/4b/pontoon-off-the-beach.jpg?w=900&h=-1&s=1",
+           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/05/49/b7/paguriran-island.jpg?w=900&h=-1&s=1",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/d5/10/80/caption.jpg?w=900&h=500&s=1",
           ]}
         />
         <CategoryCard
           name="Donsol"
           collections={142}
           images={[
-            "/static/img/donsol-1.jpg",
-            "/static/img/donsol-2.jpg",
-            "/static/img/donsol-3.jpg",
+            "https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001312305107/Donsol%252C%2520Sorsogon%2520Whale%2520Shark%2520Interaction%2520-%2520Day%2520Tour%2520from%2520Legazpi%2509-d966f3a1-c571-4636-ad23-cf35d75e226c.jpeg?_src=imagekit&tr=c-at_max,h-750,q-100,w-1000",
+            "https://lh3.googleusercontent.com/p/AF1QipP_gxSBY8cJarXW4z0AQHV1GEArGFU9nojhhpki=s1360-w1360-h1020",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/89/29/74/palogtok-falls.jpg?w=900&h=-1&s=1",
           ]}
         />
       </motion.div>
@@ -126,20 +126,35 @@ interface CategoryCardProps {
 const CategoryCard: React.FC<CategoryCardProps> = ({ name, collections, images }) => {
   return (
     <motion.div 
-      className="overflow-hidden bg-white rounded-lg shadow-lg"
+      className="overflow-hidden bg-white shadow-lg rounded-xl"
       variants={itemVariants}
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300, damping: 10 }}
     >
-      <div className="grid grid-cols-2 gap-1 p-1">
-        {images.map((src, index) => (
-          <img
-            key={index}
-            className={`w-full h-24 object-cover ${index === 0 ? 'col-span-2 h-36' : ''}`}
-            src={src}
-            alt={`${name} ${index + 1}`}
-          />
-        ))}
+      <div className="relative aspect-[4/3] p-2">
+        <div className="absolute inset-0 grid grid-cols-2 gap-2">
+          <div className="relative col-span-1 row-span-2 overflow-hidden rounded-lg">
+            <img
+              className="absolute inset-0 object-cover w-full h-full"
+              src={images[0]}
+              alt={`${name} 1`}
+            />
+          </div>
+          <div className="relative overflow-hidden rounded-lg">
+            <img
+              className="absolute inset-0 object-cover w-full h-full"
+              src={images[1]}
+              alt={`${name} 2`}
+            />
+          </div>
+          <div className="relative overflow-hidden rounded-lg">
+            <img
+              className="absolute inset-0 object-cover w-full h-full"
+              src={images[2] || images[1]}
+              alt={`${name} 3`}
+            />
+          </div>
+        </div>
       </div>
       <div className="p-4">
         <h3 className="font-heading-4 font-[number:var(--heading-4-font-weight)] text-black text-[length:var(--heading-4-font-size)] tracking-[var(--heading-4-letter-spacing)] leading-[var(--heading-4-line-height)] [font-style:var(--heading-4-font-style)]">
